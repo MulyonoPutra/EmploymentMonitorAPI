@@ -1,0 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+// eslint-disable-next-line prettier/prettier
+
+import { Injectable, OnModuleInit } from '@nestjs/common';
+
+import { PrismaClient } from '@prisma/client';
+
+@Injectable()
+export class PrismaService extends PrismaClient implements OnModuleInit {
+  [x: string]: any;
+  async onModuleInit() {
+    await this.$connect();
+  }
+}
